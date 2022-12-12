@@ -8,7 +8,10 @@ import {
   Patch,
   Query,
 } from '@nestjs/common';
-import { utils, Wallet } from 'ethers';
+import * as dotenv from 'dotenv';
+dotenv.config();
+
+import { utils } from 'ethers';
 import { AppService } from './app.service';
 import { APIResponseType } from './types';
 import { PROVIDER_URL } from './utils/constants';
@@ -55,7 +58,7 @@ export class AppController {
     const { chainId, tokenAddress, spender } = body;
     // check if chainId is valid
     const isValidChainId =
-      !isNaN(chainId) && Object.keys(PROVIDER_URL).includes(chainId);
+      !isNaN(chainId) && Object.keys(PROVIDER_URL).includes(chainId.toString());
     const isValidTokenAddress = utils.isAddress(tokenAddress);
     const isValidSpender = utils.isAddress(spender);
     if (!isValidChainId || !isValidTokenAddress || !isValidSpender) {

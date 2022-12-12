@@ -24,7 +24,8 @@
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Allowance API allows you to find infinite approvals given by the user address on ethereum and polygon network. 
+Revoke API allows to send allowance to '0'
 
 ## Installation
 
