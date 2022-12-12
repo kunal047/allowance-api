@@ -1,11 +1,11 @@
-import { rpcRequest } from './utils/axios';
 import { HttpException, HttpStatus, Injectable, Logger } from '@nestjs/common';
 import { BigNumber, Contract, ethers, utils } from 'ethers';
-import { ERC20_ABI } from './utils/abis';
-import { createTokenContracts, getErc20TokenData } from './utils/tokens';
 import { TokenMapping } from './interfaces';
+import { ERC20_ABI } from './utils/abis';
 import { getErc20AllowancesFromApprovals } from './utils/allowances';
+import { rpcRequest } from './utils/axios';
 import { PROVIDER_URL } from './utils/constants';
+import { createTokenContracts, getErc20TokenData } from './utils/tokens';
 
 const fromFloat = (floatString: string, decimals: number): string => {
   const sides = floatString.split('.');
